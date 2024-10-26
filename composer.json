@@ -1,0 +1,17 @@
+{
+    "name": "wojtazz/mmconsulting",
+    "description": "Recruitment task",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mmconsulting\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wojtazz",
+            "email": "marcin.witas72@gmail.com"
+        }
+    ],
+    "require": {}
+}
