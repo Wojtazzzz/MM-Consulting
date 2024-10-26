@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Mmconsulting\Modules\Invoices\InvoiceController;
+use Mmconsulting\Modules\Invoices\Controllers\InvoiceController;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
