@@ -2,7 +2,7 @@
 
 ## Main tools
 
-1. PHP 8.3
+1. PHP 8.2
 2. Composer
 3. SQLite
 4. [Fast Route]([https://artlist.dev/](https://github.com/nikic/FastRoute)
