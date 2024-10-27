@@ -83,6 +83,47 @@ final class InvoiceReadService
 		return $this->mapResult($result);
 	}
 
+	public function getClientExpired(int $client_id): array
+	{
+		$order = $this->getOrder();
+		$conditions = $this->getConditions($client_id);
+
+		$conditions[] = [
+			'Invoice.payment_date >' => date('Y-m-d H:i:s'),
+		];
+
+		$result = QueryBuilder::getConnection()
+			->selectQuery([
+				'Client.id',
+				'Client.name',
+				'Invoice.id as invoice_id',
+				'Invoice.number as invoice_number',
+				'Invoice.payment_date as payment_date',
+				'Invoice.total_price_gross as invoice_total_price_gross',
+				'InvoiceProduct.id as invoice_product_id',
+				'InvoiceProduct.name as invoice_product_name',
+				'InvoiceProduct.price_gross as invoice_product_price_gross',
+				'SUM(InvoiceProduct.price_gross) as invoice_paid_sum'
+			])
+			->from(['Client' => 'clients'])
+			->leftJoin(
+				['Invoice' => 'invoices'],
+				'Invoice.client_id = Client.id',
+			)
+			->leftJoin(
+				['InvoiceProduct' => 'invoice_products'],
+				'InvoiceProduct.invoice_id = Invoice.id',
+			)
+			->where($conditions)
+			->groupBy(['InvoiceProduct.invoice_id'])
+			->having(['SUM(InvoiceProduct.price_gross) < Invoice.total_price_gross'])
+			->orderBy($order)
+			->execute()
+			->fetchAll('assoc');
+
+		return $this->mapResult($result);
+	}
+
 	private function getOrder(): array
 	{
 		$order = [

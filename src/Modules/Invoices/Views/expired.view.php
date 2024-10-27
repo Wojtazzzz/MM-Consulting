@@ -1,5 +1,5 @@
 <div>
-    <h1 class="text-3xl font-semibold text-white mb-4">Niedopłaty</h1>
+    <h1 class="text-3xl font-semibold text-white mb-4">Nierozliczone faktury po terminie płatności</h1>
 
     <?php if (empty($client)): ?>
         <span>Brak danych.</span>

@@ -17,7 +17,7 @@ class InvoiceController extends BaseController
 	}
 
 	/**
-	 * Listing of client's overpayments invoices
+	 * Listing of client's overpayment invoices
 	 * @param int $client_id
 	 * @return void
 	 */
@@ -31,7 +31,7 @@ class InvoiceController extends BaseController
 	}
 
 	/**
-	 * Listing of client's underpayments invoices
+	 * Listing of client's underpayment invoices
 	 * @param int $client_id
 	 * @return void
 	 */
@@ -40,6 +40,20 @@ class InvoiceController extends BaseController
 		$client = $this->invoiceReadService->getClientUnderpayments($client_id);
 
 		$this->view('Modules/Invoices/Views/underpayments', [
+			'client' => $client,
+		]);
+	}
+
+	/**
+	 * Listing of client's expired and underpayment invoices
+	 * @param int $client_id
+	 * @return void
+	 */
+	public function expired(int $client_id): void
+	{
+		$client = $this->invoiceReadService->getClientExpired($client_id);
+
+		$this->view('Modules/Invoices/Views/expired', [
 			'client' => $client,
 		]);
 	}
