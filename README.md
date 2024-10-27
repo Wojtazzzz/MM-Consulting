@@ -50,6 +50,9 @@ php -S localhost:8000 ./index.php
 ```
 
 You can browse following endpoints:
-GET /overpayments/{$client_id}
-GET /underpayments/{$client_id}
-GET /expired/{$client_id}
+\
+`GET /overpayments/{$client_id}`
+\
+`GET /underpayments/{$client_id}`
+\
+`GET /expired/{$client_id}`
