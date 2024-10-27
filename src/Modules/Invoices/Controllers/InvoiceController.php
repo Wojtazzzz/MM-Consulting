@@ -17,15 +17,29 @@ class InvoiceController extends BaseController
 	}
 
 	/**
-	 * Listing of client's overpayments
+	 * Listing of client's overpayments invoices
 	 * @param int $client_id
 	 * @return void
 	 */
 	public function overpayments(int $client_id): void
 	{
-		$client = $this->invoiceReadService->getOverpayments($client_id);
+		$client = $this->invoiceReadService->getClientOverpayments($client_id);
 
 		$this->view('Modules/Invoices/Views/overpayments', [
+			'client' => $client,
+		]);
+	}
+
+	/**
+	 * Listing of client's underpayments invoices
+	 * @param int $client_id
+	 * @return void
+	 */
+	public function underpayments(int $client_id): void
+	{
+		$client = $this->invoiceReadService->getClientUnderpayments($client_id);
+
+		$this->view('Modules/Invoices/Views/underpayments', [
 			'client' => $client,
 		]);
 	}
