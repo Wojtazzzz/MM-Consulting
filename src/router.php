@@ -8,6 +8,7 @@ use FastRoute\RouteCollector;
 
 $dispatcher = simpleDispatcher(function (RouteCollector $router) {
 	$router->addRoute('GET', '/overpayments/{client_id:\d+}', [InvoiceController::class, 'overpayments']);
+	$router->addRoute('GET', '/underpayments/{client_id:\d+}', [InvoiceController::class, 'underpayments']);
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

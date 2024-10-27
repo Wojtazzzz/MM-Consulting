@@ -41,7 +41,17 @@ class InvoiceProductSeeder extends AbstractSeed
 				$invoice_price += $product_price;
 			}
 
-			QueryBuilder::getConnection()->update('invoices', ['total_price_gross' => $invoice_price], ['id' => $invoice[0]]);
+			$invoice_price = $faker->randomElement([
+				$invoice_price,
+				$invoice_price + $faker->numberBetween(10, 50),
+				$invoice_price - $faker->numberBetween(10, 50),
+			]);
+
+			QueryBuilder::getConnection()->update(
+				'invoices',
+				['total_price_gross' => $invoice_price],
+				['id' => $invoice[0]]
+			);
 		}
 
 		$table = $this->table('invoice_products');

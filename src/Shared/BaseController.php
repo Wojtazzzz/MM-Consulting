@@ -18,13 +18,13 @@ abstract class BaseController
 			extract($variables);
 		}
 
-		$layoutPath = getcwd() . '/src/Shared/layout.view.php';
-		$viewPath = getcwd() . '/src/'. $view . '.view.php';
+		$layout_path = getcwd() . '/src/Shared/layout.view.php';
+		$view_path = getcwd() . '/src/'. $view . '.view.php';
 
-		if (file_exists($layoutPath) && file_exists($viewPath)) {
-			extract(['view' => $viewPath]);
+		if (file_exists($layout_path) && file_exists($view_path)) {
+			extract(['view' => $view_path]);
 
-			require_once($layoutPath);
+			require_once($layout_path);
 		}
 	}
 }
