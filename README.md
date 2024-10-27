@@ -7,7 +7,7 @@
 3. SQLite
 4. [Fast Route](https://github.com/nikic/FastRoute)
 5. [Phinx](https://github.com/cakephp/phinx)
-6. [CakePHP/Database](https://github.com/cakephp/database)
+6. [Database](https://github.com/cakephp/database)
 
 ## Requirements
 
