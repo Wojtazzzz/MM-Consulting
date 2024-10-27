@@ -11,7 +11,7 @@
 
 ## Requirements
 
-1. PHP 8.2 (or newest)
+1. PHP 8.2 (or newer)
 2. Composer
 3. SQLite extension
 
