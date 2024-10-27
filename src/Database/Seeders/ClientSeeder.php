@@ -12,7 +12,7 @@ class ClientSeeder extends AbstractSeed
 
 		$data = [];
 
-		for ($i = 0; $i < 3; $i++) {
+		for ($i = 0; $i < 10; $i++) {
 			$data[] = [
 				'name' => $faker->unique()->name(),
 				'account_number' => (string) $faker->unique()->numberBetween(00000000000000000000000001, 9999999999999999999999999),

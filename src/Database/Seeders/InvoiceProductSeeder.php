@@ -28,7 +28,7 @@ class InvoiceProductSeeder extends AbstractSeed
 		foreach ($invoices as $invoice) {
 			$invoice_price = 0;
 
-			for ($i = 0; $i < 2; $i++) {
+			for ($i = 0; $i < 10; $i++) {
 				$product_price = $faker->numberBetween(100, 999) * 100;
 
 				$data[] = [

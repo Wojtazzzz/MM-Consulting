@@ -27,7 +27,7 @@ class InvoiceSeeder extends AbstractSeed
 		$data = [];
 
 		foreach ($clients as $client) {
-			for ($i = 0; $i < 3; $i++) {
+			for ($i = 0; $i < 8; $i++) {
 				$data[] = [
 					'client_id' => $client[0],
 					'number' => '2024/' . $faker->unique()->numberBetween(01111, 99999),
