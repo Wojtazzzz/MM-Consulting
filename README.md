@@ -9,6 +9,12 @@
 5. [Phinx](https://github.com/cakephp/phinx)
 6. [CakePHP/Database](https://github.com/cakephp/database)
 
+## Requirements
+
+1. PHP 8.2 (or newest)
+2. Composer
+3. SQLite extension
+
 ## Installation
 
 Run the following commands:
