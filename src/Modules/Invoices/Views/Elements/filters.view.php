@@ -1,7 +1,7 @@
 <?php
     $link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
-<form method="get" action="<?php echo $link.'/'.$client['Client']['id'] ?>">
+<form method="get" action="<?php echo $link ?>">
     <div class="grid gap-2 mb-6 md:grid-cols-2">
         <div>
             <label for="id" class="block mb-2 text-sm font-semibold text-white">ID faktury</label>
